@@ -1,0 +1,370 @@
+body {
+    background-color: rgb(214, 215, 218);
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    font-size: 1.2vw;
+}
+
+#Contenedor{
+    display: flex;
+    margin: 3% 7% 3% 7%;
+}
+
+
+/***********PANEL IZQUIERDO*****************/
+#PanelIzquierdo, .ClimaDiaDeLaSemana, .Hightlights{
+    background-color: white;
+}
+
+#PanelIzquierdo, #PanelDerecho{
+    padding: 2%;
+}
+
+#PanelIzquierdo{
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+    width: 30%;
+}
+
+
+/***********PANEL IZQUIERDO - BUSCAR*****************/
+#PanelBuscar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#PanelBuscar img{
+    width: 25px;
+    height: auto;
+    margin: auto;
+}
+
+#Busqueda{
+    border-style: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+    color: black;
+    width: 135px;
+}
+/***********PANEL IZQUIERDO - ICONO + CLIMA ACTUAL*****************/
+#ClimaActualIcono{
+    border-bottom: solid;
+    border-color: rgb(244, 244, 246);
+    padding: 10% 0% 10% 0%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#ClimaActualIcono img{
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+#ClimaActualIcono #HoraYDia #Hora, .Hightlights .TipoDeDato, .GradosMin{
+    padding-left: 0.2em;
+    color: rgb(189, 189, 189);
+}
+/***********PANEL IZQUIERDO - CLIMA ACUTAL + PRECIPITACIONES*****************/
+#ClimaActualDatos{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin: 5% 0% 5% 0%;
+}
+
+.TipoDeClima{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#PanelIzquierdo #ClimaActualDatos img{
+    width: 10%;
+    height: auto;
+}
+
+#PanelIzquierdo #ClimaActualDatos p{
+    font-size: 70%;
+    padding-left: 5%;
+}
+
+#Grados{
+    font-size: 3vw;
+    margin: 0%;
+}
+
+#HoraYDia{
+    display: flex;
+    flex-direction: row;
+}
+/***********PANEL IZQUIERDO - CIUDAD*****************/
+#CiudadYFoto{
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
+
+#CiudadYFoto p{
+    color: white;
+    background-image: url(Img/Ciudad.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    width: 100%;
+    height: 2em;
+    padding-top: 1em;
+}
+
+/***********PANEL DERECHO*****************/
+#PanelDerecho{
+    background-color: rgb(246, 246, 248);
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    width: 70%;
+}
+
+#Cabecera, #ClimaSemanal{
+    display:flex;
+    flex-direction: row;
+    justify-content:  space-between;
+    text-align: center;
+    align-content: center;
+}
+#Cabecera{
+    margin: 5px 10px;
+    align-items: center;
+}
+#Week{
+    margin-left: 10px;
+}
+
+#Week, #Today{
+    font-size: 1.4em;
+    padding-top: 12px;
+}
+
+#Cabecera div, .GradosSemana{
+    display: flex;
+    flex-direction: row;
+}
+
+#FoCMasUsuario{
+    align-items: center;
+}
+
+#Centigrados, #Fahrenheit{
+    width: 40px;
+    height: 40px;
+    padding-right: 5px;
+}
+
+#FotoUsuario{
+    width: 50px;
+    height: 50px;
+    padding-left: 30px;
+}
+
+#Week, #TodayHighlights{
+    font-weight: bold;
+}
+
+/***********PANEL DERECHO - CLIMA 7 DIAS*****************/
+#Cabecera div p, .GradosSemana p{
+ margin-top: 0%;
+}
+
+.ClimaDiaDeLaSemana{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0.5%;
+    padding: 0.5%;
+    border-radius: 20px;
+    width: 12%;
+}
+
+.ClimaDiaDeLaSemana img{
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+/***********PANEL DERECHO - CONDICIONES DEL DIA ACTUAL*****************/
+
+#DatosToday{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Hightlights{
+    border-radius: 20px;
+    width: 29%;
+    padding: 0% 1% 0% 1%;
+    margin: 1%;
+}
+
+.Hightlights .TipoDeDato{
+    font-size: 0.8em;
+}
+
+.Hightlights .Dato{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#Week{
+    border-bottom: solid;
+    border-color: black;
+}
+
+/***********MEDIAS QUERYS*****************/
+
+@media (max-width: 1200px)
+{
+    body{
+        font-size: 1em;
+    }
+
+    
+    #Contenedor{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #PanelIzquierdo{
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 40px;
+    }
+
+    #PanelDerecho{
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 40px;
+    }
+    #ClimaActualIcono{
+        padding: 3% 0% 0% 0%;
+    }
+
+    #ClimaActualIcono img{
+        width: 20%;
+    }
+
+    #ClimaActualDatos{
+        flex-direction: row;
+    }
+
+    .TipoDeClima{
+        justify-content: center;
+        width: 50%;
+    }
+
+    #PanelIzquierdo #ClimaActualDatos p{
+        font-size: 1.2em;
+    }
+
+    #PanelIzquierdo #ClimaActualDatos img{
+        width: 20%;
+    }
+
+    .GradosSemana p{
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 1000px)
+{
+    .Hightlights{
+        width: 46%;
+    }
+    #PanelBuscar{
+        padding-top: 15px; 
+    }
+}
+
+@media (max-width: 800px)
+{   
+    #PanelIzquierdo #ClimaActualDatos p{
+        font-size: 1em;
+    }
+
+    #Grados{
+        font-size: 2em;
+    }
+
+    .Hightlights{
+        width: 96%;
+    } 
+
+    #ClimaSemanal{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ClimaDiaDeLaSemana{
+        align-content: center;
+        width: 20%;
+        margin: 2.7%;
+    }
+
+    #Centigrados, #Fahrenheit{
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+    }
+    
+    #FotoUsuario{
+        width: 40px;
+        height: 40px;
+        padding-left: 30px;
+    }
+
+    #Today, #Week{
+        font-size: 1em;
+    }
+
+    #ClimaActualIcono img{
+        width: 150px;
+        padding-top: 10px;
+    }
+}
+
+/*MEDIA QUERY PARA CELULARES (IPHONE X)*/
+@media screen and (max-width: 450px)
+{
+    #Centigrados, #Fahrenheit, #FotoUsuario{
+        width: 25px;
+        height: 25px;
+        padding-right: 5px;
+    }
+    
+    #FotoUsuario{
+    padding-left: 0px;
+    }
+
+    #PanelBuscar img{
+        width: 8%;
+    }
+
+
+    #PanelIzquierdo #ClimaActualDatos p{
+        font-size: 0.8em;
+    }
+ 
+    .ClimaDiaDeLaSemana{
+        width: 40%;
+    }
+
+    #ClimaActualIcono, #ClimaActualDatos, #CiudadYFoto, #Cabecera, #TodayHighlights{
+        padding: 0 10px;
+    }
+
+    #ContenedorSemanaOActual{
+        width: 40%;
+    }
+
+
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css"/>
+    <script src="app.js"></script>
+    <title>Clima</title>
+</head>
+<body>
+    <div id="Contenedor">
+        <section id="PanelIzquierdo">
+            <div id="PanelBuscar">
+                <img src="Img/Buscar.png" alt="B"> 
+                <input id="Busqueda" type="text" placeholder="Search for places ..."> 
+                <img src="Img/Cancel.png" alt="C">
+            </div>
+            <div id="ClimaActualIcono">
+                <img src="Img/Soleado.png" alt="ClimaEnIcono">
+                <p id="Grados">12°C</p>
+                <div id="HoraYDia">
+                    <p id="Dia">Monday,</p>
+                    <p id="Hora">16:00</p>
+                </div>
+            </div>
+
+            <div id="ClimaActualDatos">
+                <div class="TipoDeClima">                
+                    <img src="Img/Nublado.png" alt="IA">
+                    <p id="ClimaActualEnString"> Mostly cloudy</p>
+                </div>
+                <div class="TipoDeClima">
+                    <img src="Img/Precipitaciones.png" alt="LL">
+                    <p id="PorcentajeDeLluvia">Rain - 30%</p>
+                </div>
+            </div>
+            <div id="CiudadYFoto">   
+                <p id="CiudadDentroDeImagen">CIUDAD</p>
+            </div>
+        </section>
+
+        <section id="PanelDerecho">
+            <div id="Cabecera">
+                <div id="ContenedorSemanaOActual">
+                    <p id="Today">Today</p>
+                    <p id="Week">Week</p>
+                </div>
+                <div id=FoCMasUsuario>
+                    <img src="Img/Centigrado.png" alt="" id="Centigrados">
+                    <img src="Img/Fahrenheit.png" alt="" id="Fahrenheit">
+                    <img src="Img/usuario.png" alt="" id="FotoUsuario">
+                </div>
+            </div>
+            <div id="ClimaSemanal">
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Sun</p>
+                    <img src="Img/Soleado.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxSunday">Max</p> <p class="GradosMin" id="GradosMinSunday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Mon</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxMonday">Max</p> <p class="GradosMin" id="GradosMinMonday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Tue</p>
+                    <img src="Img/Precipitaciones.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxTuesday">Max</p> <p class="GradosMin" id="GradosMinTuesday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Wed</p>
+                    <img src="Img/Lluvioso.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxWednesday">Max</p> <p class="GradosMin" id="GradosMinWednesday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Thu</p>
+                    <img src="Img/TormentaElectricaConLluvia.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxThursday">Max</p> <p class="GradosMin" id="GradosMinThursday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Fri</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxFriday">Max</p> <p class="GradosMin" id="GradosMinFriday">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana">
+                    <p>Sat</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxSaturday">Max</p> <p class="GradosMin" id="GradosMinSaturday">Min</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Clima">
+                <div id="texto">
+                    <p id="TodayHighlights">Today´s Highlights</p>
+                </div>
+
+                <div id="DatosToday">
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">UV Index</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Wind Status</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Sunrise & Sunset</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Humidity</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Visibility</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Air Quality</p>
+                        <p class="Dato">dato</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+</html>
