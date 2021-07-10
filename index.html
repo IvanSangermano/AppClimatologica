@@ -12,12 +12,12 @@
     <div id="Contenedor">
         <section id="PanelIzquierdo">
             <div id="PanelBuscar">
-                <img src="Img/Buscar.png" alt="B"> 
+                <img src="Img/Buscar.png" alt="B" id="Buscar"> 
                 <input  id="Busqueda" type="text" placeholder="Search by City..."> 
-                <img src="Img/Cancel.png" alt="C">
+                <img src="Img/Cancel.png" alt="C" id="Cancelar">
             </div>
             <div id="ClimaActualIcono">
-                <img src="Img/Soleado.png" alt="ClimaEnIcono">
+                <img src="Img/Soleado.png" alt="ClimaEnIcono" id="ClimaActualIconoIzq">
                 <p id="Grados">12°C</p>
                 <div id="HoraYDia">
                     <p id="Dia">Monday,</p>
@@ -27,11 +27,11 @@
 
             <div id="ClimaActualDatos">
                 <div class="TipoDeClima">                
-                    <img src="Img/Nublado.png" alt="IA">
+                    <img src="Img/Nublado.png" alt="IA" id="TipoDeClimaActualIcono">
                     <p id="ClimaActualEnString"> Mostly cloudy</p>
                 </div>
                 <div class="TipoDeClima">
-                    <img src="Img/Precipitaciones.png" alt="LL">
+                    <img src="Img/Precipitaciones.png" alt="LL" id="PrecipitacionesIcon">
                     <p id="PorcentajeDeLluvia">Rain - 30%</p>
                 </div>
             </div>
@@ -87,7 +87,7 @@
 
                 <div class="ClimaDiaDeLaSemana">
                     <p>Thu</p>
-                    <img src="Img/TormentaElectricaConLluvia.png" alt="a">
+                    <img src="Img/TormentaElectrica.png" alt="a">
                     <div class="GradosSemana">
                         <p class="GradosMax" id="GradosMaxThursday">Max</p> <p class="GradosMin" id="GradosMinThursday">Min</p>
                     </div>
@@ -122,7 +122,14 @@
                             <p class="Dato" id="MaxTemperature">datoMax</p>
                             <p class="Dato" id="MinTemperature">datoMin</p>
                         </div>
+                    </div>
 
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Sunrise & Sunset</p>
+                        <div>
+                            <p class="Dato" id="Sunrise">Sunrise</p>
+                            <p class="Dato" id="Sunset">Sunset</p>
+                        </div>
                     </div>
 
                     <div class="Hightlights">
@@ -145,14 +152,7 @@
                         <p class="Dato" id="Visibility">dato</p>
                     </div>
 
-                    <div class="Hightlights">
-                        <p class="TipoDeDato">Sunrise & Sunset</p>
-                        <div>
-                            <p class="Dato" id="Sunrise">Sunrise</p>
-                            <p class="Dato" id="Sunset">Sunset</p>
-                        </div>
 
-                    </div>
                 </div>
             </div>
 
