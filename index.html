@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css"/>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <title>Clima</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
         <section id="PanelIzquierdo">
             <div id="PanelBuscar">
                 <img src="Img/Buscar.png" alt="B"> 
-                <input id="Busqueda" type="text" placeholder="Search for places ..."> 
+                <input  id="Busqueda" type="text" placeholder="Search by City..."> 
                 <img src="Img/Cancel.png" alt="C">
             </div>
             <div id="ClimaActualIcono">
@@ -117,35 +117,42 @@
 
                 <div id="DatosToday">
                     <div class="Hightlights">
-                        <p class="TipoDeDato">UV Index</p>
-                        <p class="Dato">dato</p>
-                    </div>
+                        <p class="TipoDeDato">Max & Min Temperature</p>
+                        <div>
+                            <p class="Dato" id="MaxTemperature">datoMax</p>
+                            <p class="Dato" id="MinTemperature">datoMin</p>
+                        </div>
 
-                    <div class="Hightlights">
-                        <p class="TipoDeDato">Wind Status</p>
-                        <p class="Dato">dato</p>
-                    </div>
-
-                    <div class="Hightlights">
-                        <p class="TipoDeDato">Sunrise & Sunset</p>
-                        <p class="Dato">dato</p>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Humidity</p>
-                        <p class="Dato">dato</p>
+                        <p class="Dato" id="Humidity">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Wind Speed</p>
+                        <p class="Dato" id="WindSpeed">dato</p>
+                    </div>
+
+                    <div class="Hightlights">
+                        <p class="TipoDeDato">Pressure</p>
+                        <p class="Dato" id="Pressure">dato</p>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Visibility</p>
-                        <p class="Dato">dato</p>
+                        <p class="Dato" id="Visibility">dato</p>
                     </div>
 
                     <div class="Hightlights">
-                        <p class="TipoDeDato">Air Quality</p>
-                        <p class="Dato">dato</p>
-                    </div>
+                        <p class="TipoDeDato">Sunrise & Sunset</p>
+                        <div>
+                            <p class="Dato" id="Sunrise">Sunrise</p>
+                            <p class="Dato" id="Sunset">Sunset</p>
+                        </div>
 
+                    </div>
                 </div>
             </div>
 
