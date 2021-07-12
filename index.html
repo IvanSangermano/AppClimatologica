@@ -53,59 +53,59 @@
                 </div>
             </div>
             <div id="ClimaSemanal">
-                <div class="ClimaDiaDeLaSemana">
-                    <p>Sun</p>
-                    <img src="Img/Soleado.png" alt="a">
+                <div class="ClimaDiaDeLaSemana" >
+                    <p id="Dia1">Sun</p>
+                    <img src="Img/Soleado.png" alt="a" id="imgDia1">
                     <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxSunday">Max</p> <p class="GradosMin" id="GradosMinSunday">Min</p>
+                        <p class="GradosMax" id="GradosMaxDia1">Max</p> <p class="GradosMin" id="GradosMinDia1">Min</p>
                     </div>
                 </div>
 
                 <div class="ClimaDiaDeLaSemana">
-                    <p>Mon</p>
-                    <img src="Img/ParcialmenteNublado.png" alt="a">
+                    <p id="Dia2">Mon</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a" id="imgDia2">
                     <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxMonday">Max</p> <p class="GradosMin" id="GradosMinMonday">Min</p>
+                        <p class="GradosMax" id="GradosMaxDia2">Max</p> <p class="GradosMin" id="GradosMinDia2">Min</p>
                     </div>
                 </div>
 
                 <div class="ClimaDiaDeLaSemana">
-                    <p>Tue</p>
-                    <img src="Img/Precipitaciones.png" alt="a">
+                    <p id="Dia3">Tue</p>
+                    <img src="Img/Precipitaciones.png" alt="a" id="imgDia3">
                     <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxTuesday">Max</p> <p class="GradosMin" id="GradosMinTuesday">Min</p>
+                        <p class="GradosMax" id="GradosMaxDia3">Max</p> <p class="GradosMin" id="GradosMinDia3">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana" >
+                    <p id="Dia4">Wed</p>
+                    <img src="Img/Lluvioso.png" alt="a" id="imgDia4">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxDia4">Max</p> <p class="GradosMin" id="GradosMinDia4">Min</p>
                     </div>
                 </div>
 
                 <div class="ClimaDiaDeLaSemana">
-                    <p>Wed</p>
-                    <img src="Img/Lluvioso.png" alt="a">
+                    <p id="Dia5">Thu</p>
+                    <img src="Img/TormentaElectrica.png" alt="a" id="imgDia5">
                     <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxWednesday">Max</p> <p class="GradosMin" id="GradosMinWednesday">Min</p>
+                        <p class="GradosMax" id="GradosMaxDia5">Max</p> <p class="GradosMin" id="GradosMinDia5">Min</p>
+                    </div>
+                </div>
+
+                <div class="ClimaDiaDeLaSemana" >
+                    <p id="Dia6">Fri</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a" id="imgDia6">
+                    <div class="GradosSemana">
+                        <p class="GradosMax" id="GradosMaxDia6">Max</p> <p class="GradosMin" id="GradosMinDia6">Min</p>
                     </div>
                 </div>
 
                 <div class="ClimaDiaDeLaSemana">
-                    <p>Thu</p>
-                    <img src="Img/TormentaElectrica.png" alt="a">
+                    <p id="Dia7">Sat</p>
+                    <img src="Img/ParcialmenteNublado.png" alt="a" id="imgDia7">
                     <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxThursday">Max</p> <p class="GradosMin" id="GradosMinThursday">Min</p>
-                    </div>
-                </div>
-
-                <div class="ClimaDiaDeLaSemana">
-                    <p>Fri</p>
-                    <img src="Img/ParcialmenteNublado.png" alt="a">
-                    <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxFriday">Max</p> <p class="GradosMin" id="GradosMinFriday">Min</p>
-                    </div>
-                </div>
-
-                <div class="ClimaDiaDeLaSemana">
-                    <p>Sat</p>
-                    <img src="Img/ParcialmenteNublado.png" alt="a">
-                    <div class="GradosSemana">
-                        <p class="GradosMax" id="GradosMaxSaturday">Max</p> <p class="GradosMin" id="GradosMinSaturday">Min</p>
+                        <p class="GradosMax" id="GradosMaxDia7">Max</p> <p class="GradosMin" id="GradosMinDia7">Min</p>
                     </div>
                 </div>
             </div>
@@ -119,39 +119,62 @@
                     <div class="Hightlights">
                         <p class="TipoDeDato">Max & Min Temperature</p>
                         <div>
-                            <p class="Dato" id="MaxTemperature">datoMax</p>
-                            <p class="Dato" id="MinTemperature">datoMin</p>
+                            <div class="HightLightsTextMasIMG">
+                                <img src="Img/TemperaturaMax.png" alt="" class="imgHightLights">
+                                <p class="Dato" id="MaxTemperature">datoMax</p>
+                            </div>
+                            <div class="HightLightsTextMasIMG">
+                                <img src="Img/TemperaturaMin.png" alt="" class="imgHightLights">
+                                <p class="Dato" id="MinTemperature">datoMin</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Sunrise & Sunset</p>
                         <div>
-                            <p class="Dato" id="Sunrise">Sunrise</p>
-                            <p class="Dato" id="Sunset">Sunset</p>
+                            <div class="HightLightsTextMasIMG">
+                                <img src="Img/sunrise.png" alt="" class="imgHightLights">
+                                <p class="Dato" id="Sunrise">Sunrise</p>
+                            </div>
+                            <div class="HightLightsTextMasIMG">
+                                <img src="Img/sunset.png" alt="" class="imgHightLights">
+                                <p class="Dato" id="Sunset">Sunset</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Humidity</p>
-                        <p class="Dato" id="Humidity">dato</p>
+                        <div class="HightLightsTextMasIMG">
+                            <img src="Img/Humedad.png" alt="" class="imgHightLights">
+                            <p class="Dato" id="Humidity">dato</p>
+                        </div>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Wind Speed</p>
-                        <p class="Dato" id="WindSpeed">dato</p>
+                        <div class="HightLightsTextMasIMG">
+                            <img src="Img/viento.png" alt="" class="imgHightLights">
+                            <p class="Dato" id="WindSpeed">dato</p>
+                        </div>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Pressure</p>
-                        <p class="Dato" id="Pressure">dato</p>
+                        <div class="HightLightsTextMasIMG">
+                            <img src="Img/Presion.png" alt="" class="imgHightLights">
+                            <p class="Dato" id="Pressure">dato</p>
+                        </div>
                     </div>
 
                     <div class="Hightlights">
                         <p class="TipoDeDato">Visibility</p>
-                        <p class="Dato" id="Visibility">dato</p>
+                        <div class="HightLightsTextMasIMG">
+                            <img src="Img/Visibilidad.png" alt="" class="imgHightLights">
+                            <p class="Dato" id="Visibility">dato</p>
+                        </div>
                     </div>
-
 
                 </div>
             </div>

@@ -7,6 +7,7 @@ Cancel.addEventListener("click", function (){
 });
 
 var CuadroDeBusqueda = document.getElementById("Busqueda");
+
 CuadroDeBusqueda.addEventListener("keypress", function onChangeInput(e){
     if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
         const valueLocation = document.getElementById('Busqueda').value;
@@ -22,11 +23,28 @@ CuadroDeBusqueda.addEventListener("click", function onChangeInput(e){
 
 
 const getWeather = async (location) => {
-    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + location +"&units=metric&appid=5ff711b4e64edf3a76e5c6c95af460ff");
+
+    const docBusqueda = document.getElementById('Busqueda')
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + location +"&units=metric&appid=5ff711b4e64edf3a76e5c6c95af460ff");  
     const myJson = await response.json();
-    console.log(myJson, new Date());
+    console.log("myJson", myJson);
+
+    var RetornoBusquedaFallida = document.getElementById('Busqueda').value;
+
+    if (myJson.message == "city not found") {
+        docBusqueda.value = "Error, City not found";
+        docBusqueda.style.color = "red";
+        setTimeout(() => {
+            docBusqueda.value = RetornoBusquedaFallida;
+            docBusqueda.style.color = "black";
+        }, 1500);
+        return;
+    }
+
+    var diaDeHoy = dias[DiaActual.getDay()];
+
     document.getElementById('Grados').innerHTML = myJson.main.temp + '°C';
-    document.getElementById('Dia').innerHTML = dias[DiaActual.getDay()] + ", ";
+    document.getElementById('Dia').innerHTML = diaDeHoy + ", ";
     document.getElementById('Hora').innerHTML =  CorrectlyHoursAndMinute(DiaActual.getHours(), DiaActual.getMinutes());
     document.getElementById('ClimaActualEnString').innerHTML = toUpper(myJson.weather[0].description);
     try {
@@ -43,16 +61,43 @@ const getWeather = async (location) => {
     catch (error) { 
         document.getElementById('CiudadDentroDeImagen').innerHTML = 'CIUDAD';
     }
-    document.getElementById('MaxTemperature').innerHTML = 'Max: ' + myJson.main.temp_max + '°C';
-    document.getElementById('MinTemperature').innerHTML = 'Max: ' + myJson.main.temp_min + '°C';
+    document.getElementById('MaxTemperature').innerHTML = myJson.main.temp_max + '°C';
+    document.getElementById('MinTemperature').innerHTML = myJson.main.temp_min + '°C';
     document.getElementById('Humidity').innerHTML = myJson.main.humidity + '%';
     document.getElementById('WindSpeed').innerHTML = myJson.wind.speed + ' m/s';
     document.getElementById('Pressure').innerHTML = myJson.main.pressure + ' hPa';
     document.getElementById('Visibility').innerHTML = myJson.visibility + ' Mts.';
     document.getElementById('Sunrise').innerHTML = SecondToHoursAndMinute(myJson.sys.sunrise) + ' Hs';
     document.getElementById('Sunset').innerHTML = SecondToHoursAndMinute(myJson.sys.sunset)  + ' Hs';
-    SwitchImg(myJson.weather[0].description, "ClimaActualIconoIzq");
-    SwitchImg(myJson.weather[0].description, "TipoDeClimaActualIcono")
+
+    SwitchImg(myJson.weather[0].id, "ClimaActualIconoIzq");
+    SwitchImg(myJson.weather[0].id, "TipoDeClimaActualIcono")
+
+    const lat = myJson.coord.lat;
+    const lon = myJson.coord.lon;
+
+    getWeatherHistory(lat, lon, diaDeHoy);
+}
+const getWeatherHistory = async (latitud, longuitud, diaDeHoy) => { 
+    const response = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + latitud +"&lon=" + longuitud+ "&units=metric&exclude=current,minutely,hourly,alerts&appid=5ff711b4e64edf3a76e5c6c95af460ff");  
+    const myJson2 = await response.json();
+    console.log("myJson",myJson2);
+
+   for (let i = 1; i <= 7; i++) {
+       var GradosMax = document.getElementById("GradosMaxDia" + i);
+       GradosMax.innerHTML = myJson2.daily[i-1].temp.max;
+       var GradosMin = document.getElementById("GradosMinDia" + i);
+       GradosMin.innerHTML = myJson2.daily[i-1].temp.min;
+   }
+
+   const firstpart = dias.splice(0, dias.indexOf(diaDeHoy));
+   const newArrayDay = dias.concat(firstpart);
+
+   for (let j = 0; j < 7; j++) {
+       var DayDocument = document.getElementById("Dia" + (j+1));
+       DayDocument.innerHTML = newArrayDay[j].substring(0,3);
+       SwitchImg(myJson2.daily[j].weather[0].id, "imgDia" + (j+1));
+   }
 }
 
 function toUpper(str) {
@@ -88,37 +133,37 @@ function SecondToHoursAndMinute(valor){
     return  hours + ':' + minutes.substr(-2);
 }
 
-function SwitchImg(WeatherType, id){
-    switch (WeatherType) {
-        case "clear sky":
-            document.getElementById(id).src = "Img/Soleado.png";
-            break;
-        case "few clouds":
-            document.getElementById(id).src = "Img/ParcialmenteNublado.png";
-            break;
-        case "scattered clouds":
-            document.getElementById(id).src = "Img/Nublado.png";
-            break;
-        case "broken clouds":
-            document.getElementById(id).src = "Img/Churrascos.png";
-            break;
-        case "shower rain":
-            document.getElementById(id).src = "Img/Lluvioso.png";
-            break;
-        case "rain":
-            document.getElementById(id).src = "Img/Lluvioso.png";
-            break;
-        case "thunderstorm":
-            document.getElementById(id).src = "Img/TormentaElectrica.png";
-            break;
-        case "snow":
-            document.getElementById(id).src = "Img/Nevado.png";
-            break;
-        case "mist":
-            document.getElementById(id).src = "Img/Neblina.png";
-            break;
-        default:
-            break;
+function SwitchImg(WeatherTypeID, id){
+    if(WeatherTypeID >= 200 || WeatherTypeID <= 232){
+        document.getElementById(id).src = "Img/TormentaElectrica.png";
     }
+
+    if(WeatherTypeID >= 300 && WeatherTypeID <= 310 || WeatherTypeID == 771){
+        document.getElementById(id).src = "Img/Churrascos.png";
+    }
+
+    if(WeatherTypeID >= 311 && WeatherTypeID <= 321){
+        document.getElementById(id).src = "Img/Lluvioso.png";
+    }
+
+    if(WeatherTypeID >= 600 && WeatherTypeID <= 622){
+        document.getElementById(id).src = "Img/Nevado.png";
+    }
+
+    if(WeatherTypeID >= 701 && WeatherTypeID <= 770){
+        document.getElementById(id).src = "Img/Neblina.png";
+    }           
+
+    if(WeatherTypeID == 800){
+        document.getElementById(id).src = "Img/Soleado.png";
+    }
+          
+    if(WeatherTypeID == 801||WeatherTypeID == 802){ 
+        document.getElementById(id).src = "Img/ParcialmenteNublado.png";
+    }
+
+    if(WeatherTypeID == 803||WeatherTypeID == 804){
+        document.getElementById(id).src = "Img/Nublado.png";
+    }   
 }
 

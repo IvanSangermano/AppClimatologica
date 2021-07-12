@@ -191,6 +191,10 @@ margin-left: 5%;
     width: 12%;
 }
 
+.GradosMax{
+    padding-right: 3%;
+}
+
 .ClimaDiaDeLaSemana img{
     width: 50%;
     height: auto;
@@ -219,6 +223,17 @@ margin-left: 5%;
 .Hightlights .Dato{
     font-size: 1.5em;
     text-align: center;
+}
+
+.HightLightsTextMasIMG{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.imgHightLights{
+    width: 20%;
 }
 
 #Week{
@@ -279,6 +294,11 @@ margin-left: 5%;
     .GradosSemana p{
         font-size: 0.8em;
     }
+
+    .imgHightLights{
+        width: 17%;
+    }
+    
 }
 
 @media (max-width: 1000px)
@@ -288,6 +308,10 @@ margin-left: 5%;
     }
     #PanelBuscar{
         padding-top: 15px; 
+    }
+
+    .imgHightLights{
+        width: 15%;
     }
 }
 
@@ -337,6 +361,10 @@ margin-left: 5%;
         width: 150px;
         padding-top: 10px;
     }
+
+    .imgHightLights{
+        width: 10%;
+    }
 }
 
 /*MEDIA QUERY PARA CELULARES (IPHONE X)*/
@@ -372,6 +400,4 @@ margin-left: 5%;
     #ContenedorSemanaOActual{
         width: 40%;
     }
-
-
 }
